@@ -17,10 +17,11 @@ class FakersBnB < Sinatra::Base
   post '/signup' do
     user = User.create(email: params[:email], password: params[:password])
     if user
-    session[:user_id] = user.id
-    redirect '/profile'
+      session[:user_id] = user.id
+      redirect '/profile'
     else
-    redirect '/error1'
+      redirect '/error1'
+    end
   end
 
   get '/profile' do
