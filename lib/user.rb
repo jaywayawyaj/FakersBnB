@@ -1,7 +1,7 @@
 require 'data_mapper'
 
 class User
-  include Data_Mapper::Resource
+  include DataMapper::Resource
 
 property :id, Serial
 property :email, String
