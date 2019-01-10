@@ -17,7 +17,7 @@ class FakersBnB < Sinatra::Base
   end
 
   post '/signup' do
-    # 
+    #
     # user = User.create(email: params[:email], password: params[:password])
     # p user
     # if user
@@ -31,6 +31,11 @@ class FakersBnB < Sinatra::Base
 
   get '/profile' do
     erb :profile
+  end
+
+
+  get '/add_property' do
+    erb :add_property
   end
 
   run! if app_file == $0
