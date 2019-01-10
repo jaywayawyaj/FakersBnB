@@ -13,3 +13,5 @@ group :test do
   gem "rspec"
   gem "capybara"
 end
+
+gem "simplecov", "~> 0.16.1"
