@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require './lib/user'
+require './config/datamapper'
 
 class FakersBnB < Sinatra::Base
 
