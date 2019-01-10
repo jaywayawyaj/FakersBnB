@@ -2,9 +2,10 @@
 
 require 'sinatra/base'
 require './lib/user'
+require './config/datamapper'
 
 class FakersBnB < Sinatra::Base
-
+  set :sessions, true
 
 
   get '/' do
@@ -17,7 +18,6 @@ class FakersBnB < Sinatra::Base
 
   post '/signup' do
     user = User.create(email: params[:email], password: params[:password])
-    p user
     if user
       session[:user_id] = user.id
       redirect '/profile'
@@ -28,6 +28,7 @@ class FakersBnB < Sinatra::Base
   end
 
   get '/profile' do
+    @user = User.get(session[:user_id])
     erb :profile
   end
 
