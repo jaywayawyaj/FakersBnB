@@ -1,7 +1,8 @@
 # ENV['RACK_ENV'] = 'development'
 
 require 'sinatra/base'
-require './lib/user'
+require_relative './lib/user'
+require_relative './lib/property'
 require './config/datamapper'
 
 class FakersBnB < Sinatra::Base
@@ -36,6 +37,24 @@ class FakersBnB < Sinatra::Base
 
   get '/add_property' do
     erb :add_property
+  end
+
+  post '/property_added' do
+    property = Property.create(:name => params[:property_name])
+    redirect "/property_added/#{property.id}"
+  end
+
+  # post '/update-message/:id' do |id|
+  #   message = Message.get!(id.to_i)
+  #   message.update(:text => params[:message])
+  #   redirect"/messages/#{id}"
+  # end
+
+  get '/property_added/:id' do |id|
+    # we want to return the property that has the particular name, desc, price that was stored in the param when user filled the form
+
+    @property = Property.get!(id)
+    erb :property_added
   end
 
   run! if app_file == $0
