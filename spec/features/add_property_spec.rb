@@ -1,7 +1,6 @@
 RSpec.feature 'Adding property' do
 
   let(:property) { Property.create(
-    :id => 1,
     :name => "Test house",
     :description => "Test description",
     :price => "150"
@@ -22,7 +21,8 @@ RSpec.feature 'Adding property' do
     fill_in "property_desc" , with: "Big spacious house"
     fill_in "property_price" , with: "450"
     click_button "Submit"
-    expect(page.current_path).to eq "/property_added/#{property.id}"
+    ### comment to revisit
+    expect(page.current_path).to eq "/property_added/1"
     expect(page).to have_content "Congrats your property has been submitted"
     expect(page).to have_content "Cosmos Manor"
     expect(page).to have_content "Big spacious house"

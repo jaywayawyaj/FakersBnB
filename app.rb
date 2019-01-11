@@ -40,21 +40,19 @@ class FakersBnB < Sinatra::Base
   end
 
   post '/property_added' do
-    property = Property.create(:name => params[:property_name])
+    property = Property.create(:name => params[:property_name], :description => params[:property_desc], :price => params[:property_price])
     redirect "/property_added/#{property.id}"
   end
 
-  # post '/update-message/:id' do |id|
-  #   message = Message.get!(id.to_i)
-  #   message.update(:text => params[:message])
-  #   redirect"/messages/#{id}"
-  # end
 
   get '/property_added/:id' do |id|
     # we want to return the property that has the particular name, desc, price that was stored in the param when user filled the form
-
     @property = Property.get!(id)
     erb :property_added
+  end
+
+  get '/rent_property' do
+    erb :rent_properties
   end
 
   run! if app_file == $0

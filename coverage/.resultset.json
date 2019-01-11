@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jayway/makers/projects/week-5/FakersBnB/app.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/app.rb": [
         1,
         null,
         1,
@@ -35,7 +35,7 @@
         null,
         null,
         1,
-        2,
+        3,
         null,
         null,
         null,
@@ -49,11 +49,9 @@
         null,
         null,
         null,
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
         1,
         null,
         null,
@@ -64,7 +62,7 @@
         1,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/lib/user.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/lib/user.rb": [
         1,
         null,
         1,
@@ -76,7 +74,7 @@
         null,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/lib/property.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/lib/property.rb": [
         1,
         null,
         1,
@@ -89,7 +87,7 @@
         null,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/config/datamapper.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/config/datamapper.rb": [
         1,
         1,
         1,
@@ -98,7 +96,7 @@
         1,
         1
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/spec/web_helpers.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/spec/web_helpers.rb": [
         1,
         0,
         0,
@@ -107,7 +105,7 @@
         0,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/spec/features/FakersBnB_spec.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/spec/features/FakersBnB_spec.rb": [
         null,
         null,
         null,
@@ -124,21 +122,12 @@
         null,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/spec/features/property_spec.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/spec/features/add_property_spec.rb": [
         1,
         null,
-        2,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
-        1,
-        1,
-        1,
-        1,
+        null,
+        null,
         null,
         null,
         null,
@@ -147,17 +136,39 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/jayway/makers/projects/week-5/FakersBnB/spec/units/property_spec.rb": [
+      "/Users/beatricecourage/Projects/FakersBnB/spec/features/rent_property_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/beatricecourage/Projects/FakersBnB/spec/units/property_spec.rb": [
         1,
         null,
         1,
@@ -188,6 +199,6 @@
         null
       ]
     },
-    "timestamp": 1547197344
+    "timestamp": 1547205420
   }
 }
