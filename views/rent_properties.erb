@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Here is a list of properties to rent</h1>
+    <div id='container'>
+
+      <% @properties.each do|property| %>
+        <div class = 'property-tile'>
+          <%= property.name %>
+          <%= property.description %>
+          <%= property.price %>
+          <a href = "/individual_property/<%=property.id%>">View property</a>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </body>
+</html>
