@@ -19,7 +19,7 @@ RSpec.feature 'Viewing property' do
    end
 
    it 'allows you to view a particular property' do
-     click_link "View property"
+     first('.property-tile').click_link "View property"
      # expect(page.current_path).to eq "/"
      expect(page).to have_content "Property you have selected:"
    end
@@ -29,6 +29,15 @@ RSpec.feature 'Viewing property' do
     click_link "View property"
     expect(page).to have_content(prop_name)
   end
+
+
+     it 'allows you to view a particular property when multiple properties' do
+       add_property('jethros house')
+       view_properties
+       first('.property-tile').click_link "View property"
+       # expect(page.current_path).to eq "/"
+       expect(page).to have_content "Property you have selected:"
+     end
  end
 
 
