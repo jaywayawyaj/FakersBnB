@@ -5,6 +5,7 @@ RSpec.feature 'Viewing property' do
 
  context "user can access properties page and view properties " do
    before {
+          sign_up('Gabe', 'Huxley')
           add_property(prop_name)
           view_properties
    }

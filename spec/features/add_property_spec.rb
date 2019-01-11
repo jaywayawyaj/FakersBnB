@@ -5,6 +5,14 @@ RSpec.feature 'Adding property' do
     :description => "Test description",
     :price => "150"
     )}
+
+  let(:dummy_email){'toscar_rules@gmail.com'}
+  let(:dummy_password){'password'}
+
+    before {
+      sign_up(dummy_email, dummy_password)
+    }
+    
   # let!(:user) { User.create(email: 'test@test.com', password: 'secret123')}
   scenario "User can access add property page from the /profile" do
     visit "/profile"
@@ -15,6 +23,7 @@ RSpec.feature 'Adding property' do
 
 
   scenario "User can add property details" do
+
     add_property("Cosmos Manor","Big spacious house","450")
     ### comment to revisit
     expect(page.current_path).to eq "/property_added/1"

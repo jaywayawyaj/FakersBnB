@@ -60,6 +60,7 @@ class FakersBnB < Sinatra::Base
 
   get '/profile' do
     @user = User.get(session[:user_id])
+    session[:user_id]
     erb :profile
   end
 
