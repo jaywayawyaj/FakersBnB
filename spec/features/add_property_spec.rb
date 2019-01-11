@@ -15,12 +15,7 @@ RSpec.feature 'Adding property' do
 
 
   scenario "User can add property details" do
-    visit "/profile"
-    click_link "Add property"
-    fill_in "property_name" , with: "Cosmos Manor"
-    fill_in "property_desc" , with: "Big spacious house"
-    fill_in "property_price" , with: "450"
-    click_button "Submit"
+    add_property("Cosmos Manor","Big spacious house","450")
     ### comment to revisit
     expect(page.current_path).to eq "/property_added/1"
     expect(page).to have_content "Congrats your property has been submitted"

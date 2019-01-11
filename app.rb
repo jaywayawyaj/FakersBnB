@@ -52,6 +52,7 @@ class FakersBnB < Sinatra::Base
   end
 
   get '/rent_property' do
+    @properties = Property.all
     erb :rent_properties
   end
 
