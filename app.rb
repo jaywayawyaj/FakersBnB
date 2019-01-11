@@ -92,5 +92,13 @@ class FakersBnB < Sinatra::Base
     erb :individual_property
   end
 
+  get '/back' do
+    if session[:user_id]
+      redirect '/profile'
+    else
+      redirect '/'
+    end
+  end
+
   run! if app_file == $0
 end

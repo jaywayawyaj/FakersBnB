@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <style media="screen">
-
-    </style>
+    <link rel='stylesheet' type='css/text' href= "<%=url("css/main.css")%>"/>
     <meta charset="utf-8">
     <title>  </title>
   </head>
-  <body>
+    <body colorbg="#f7aff1">
     <center>
     <h1> COSMOS BNB </h1>
-<%= yield %>
+    <%= yield %>
+
+    <form action="/back" method="get">
+      <input type="submit" value="Homepage">
+    </form>
     </center>
   </body>
 </html>
