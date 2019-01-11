@@ -17,6 +17,18 @@ RSpec.feature 'Viewing property' do
    it 'displays list of properties' do
       expect(page).to have_content(prop_name)
    end
+
+   it 'allows you to view a particular property' do
+     click_link "View property"
+     # expect(page.current_path).to eq "/"
+     expect(page).to have_content "Property you have selected:"
+   end
+
+
+  it 'allows you to view property details' do
+    click_link "View property"
+    expect(page).to have_content(prop_name)
+  end
  end
 
 

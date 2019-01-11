@@ -56,5 +56,11 @@ class FakersBnB < Sinatra::Base
     erb :rent_properties
   end
 
+  get '/individual_property/:id' do |id|
+    #we want to return the property that has the same id as the property thatw as the property we clicked on
+    @property = Property.get!(id)
+    erb :individual_property
+  end
+
   run! if app_file == $0
 end

@@ -9,9 +9,13 @@
     <div id='container'>
 
       <% @properties.each do|property| %>
-        <%= property.name %>
+        <div class = 'property-tile'>
+          <%= property.name %>
+          <%= property.description %>
+          <%= property.price %>
+          <a href = "/individual_property/<%=property.id%>">View property</a>
+        </div>
       <% end %>
-
       </div>
     </div>
   </body>
