@@ -5,17 +5,14 @@
     <title></title>
   </head>
   <body>
-    <form action="/sessions" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log out">
-    </form>
-
     <h1>Welcome, <%=%>!</h1>
-
     <h2>Your info</h2>
     <p>email: <%= @user.email%></p>
     <p>
-      <a href="/">Logout</a>
+      <form action="/logout" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log out">
+      </form>
     </p>
   </body>
 </html>
