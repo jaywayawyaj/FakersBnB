@@ -1,7 +1,8 @@
-# ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
-require './lib/user'
+require_relative './lib/user'
+require_relative './lib/property'
 require './config/datamapper'
 require 'pry'
 
@@ -60,6 +61,34 @@ class FakersBnB < Sinatra::Base
   get '/profile' do
     @user = User.get(session[:user_id])
     erb :profile
+  end
+
+
+  get '/add_property' do
+    erb :add_property
+  end
+
+  post '/property_added' do
+    property = Property.create(:name => params[:property_name], :description => params[:property_desc], :price => params[:property_price])
+    redirect "/property_added/#{property.id}"
+  end
+
+
+  get '/property_added/:id' do |id|
+    # we want to return the property that has the particular name, desc, price that was stored in the param when user filled the form
+    @property = Property.get!(id)
+    erb :property_added
+  end
+
+  get '/rent_property' do
+    @properties = Property.all
+    erb :rent_properties
+  end
+
+  get '/individual_property/:id' do |id|
+    #we want to return the property that has the same id as the property thatw as the property we clicked on
+    @property = Property.get!(id)
+    erb :individual_property
   end
 
   run! if app_file == $0
